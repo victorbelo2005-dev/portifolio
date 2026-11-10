@@ -1,0 +1,286 @@
+/* 1. Variáveis de cor */
+:root {
+  --bg: #16161f;
+  --bg-card: #1e1e2a;
+  --texto: #e6e6ef;
+  --destaque: #7FB3D5;
+}
+
+/* 2. Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--destaque);
+}
+
+/* 3. Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--bg-card);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  color: var(--destaque);
+}
+
+/* 4. Menu */
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  margin-left: 24px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--destaque);
+}
+
+/* 5. Seções e rodapé */
+main section {
+  padding: 80px 8%;
+}
+
+section h2 {
+  color: var(--destaque);
+  margin-bottom: 20px;
+}
+
+section ul {
+  padding-left: 24px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background: var(--bg-card);
+  color: #888;
+}
+
+/* 6. Hero + fundo dinâmico */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero > *:not(canvas) {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-saudacao {
+  color: var(--destaque);
+  font-size: 1.1rem;
+}
+
+.hero-titulo {
+  color: var(--texto);
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-descricao {
+  max-width: 640px;
+  color: #b5b5c6;
+  margin-bottom: 32px;
+}
+
+/* 7. Sobre */
+.sobre-conteudo {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.foto {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--destaque);
+}
+
+.sobre-texto p {
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+/* 8. Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.projeto-card {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 12px;
+  border-top: 3px solid var(--destaque);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s;
+}
+
+.projeto-card:hover {
+  transform: translateY(-4px);
+}
+
+.projeto-card p {
+  color: #b5b5c6;
+  flex-grow: 1;
+}
+
+.tags {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li {
+  background: var(--bg);
+  color: var(--destaque);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.projeto-links {
+  display: flex;
+  gap: 12px;
+}
+
+.projeto-links a {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 2px solid var(--destaque);
+  border-radius: 8px;
+  color: var(--destaque);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+.projeto-links a:hover {
+  background: var(--destaque);
+  color: var(--bg);
+}
+
+.ver-todo {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ver-todo a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--destaque);
+  color: var(--bg);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.ver-todo a:hover {
+  transform: translateY(-3px);
+}
+
+/* 9. Sobre e Contato */
+.bloco {
+  margin-bottom: 48px;
+}
+
+.bloco h3 {
+  margin-bottom: 12px;
+}
+
+.formacao {
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-left: 3px solid var(--destaque);
+  border-radius: 8px;
+}
+
+.formacao p {
+  color: #b5b5c6;
+}
+
+.skills-grupo {
+  margin-bottom: 20px;
+}
+
+.skills-grupo h4 {
+  color: #b5b5c6;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.contato-card {
+  display: block;
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 12px;
+  border-top: 3px solid var(--destaque);
+  color: var(--texto);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.contato-card:hover {
+  transform: translateY(-4px);
+}
+
+.contato-card h3 {
+  color: var(--destaque);
+  margin-bottom: 8px;
+}
+
+.contato-card p {
+  color: #b5b5c6;
+}
+
